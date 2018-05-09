@@ -60,7 +60,7 @@ function filter_syntaxhighlighter_cssclasses( $classes ) {
  * Enqueue styles.
  */
 function enqueue_styles() {
-	wp_enqueue_style( 'hjjs-default', plugin_dir_url( __FILE__ ) . '/vendor/scrivo/highlight.php/styles/default.css' );
+	wp_enqueue_style( 'hjjs-default', plugin_dir_url( __FILE__ ) . 'vendor/scrivo/highlight.php/styles/default.css' );
 }
 
 /**
