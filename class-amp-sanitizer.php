@@ -130,7 +130,8 @@ class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 						break;
 					case 'javascript':
 					case 'js':
-						$language = 'php';
+					case 'jsx':
+						$language = 'javascript';
 						break;
 				}
 			}
@@ -143,7 +144,7 @@ class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 
 			return array(
 				'value'    => $r->value,
-				'language' => $r->langauge,
+				'language' => $r->language,
 			);
 		} catch ( \Exception $e ) {
 			return $e;
