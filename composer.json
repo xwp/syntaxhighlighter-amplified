@@ -12,5 +12,17 @@
   ],
   "require": {
     "scrivo/highlight.php": "^9.17"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^2.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  },
+  "scripts": {
+    "lint": [
+      "phpcs"
+    ],
+    "lint-fix": [
+      "phpcbf"
+    ]
   }
 }
