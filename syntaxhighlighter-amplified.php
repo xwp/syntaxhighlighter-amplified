@@ -83,7 +83,6 @@ function enqueue_styles() {
  * @return array Sanitizers.
  */
 function filter_amp_content_sanitizers( $sanitizers ) {
-	require_once __DIR__ . '/class-amp-sanitizer.php';
 	return array_merge(
 		array(
 			__NAMESPACE__ . '\AMP_Sanitizer' => array(),

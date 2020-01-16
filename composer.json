@@ -9,6 +9,11 @@
       "email": "weston@xwp.co"
     }
   ],
+  "autoload":{
+    "files": [
+      "class-amp-sanitizer.php"
+    ]
+  },
   "require": {
     "scrivo/highlight.php": "^9.17"
   },
