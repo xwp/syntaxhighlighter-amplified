@@ -1,16 +1,33 @@
 {
-    "name": "xwp/syntaxhighlighter-amplified",
-    "description": "Extension plugin for SyntaxHighlighter Evolved which uses highlight.php to add syntax highlighting in AMP responses.",
-    "type": "wordpress-plugin",
-    "license": "MIT",
-    "version": "0.1",
-    "authors": [
-        {
-            "name": "Weston Ruter",
-            "email": "weston@xwp.co"
-        }
-    ],
-    "require": {
-        "scrivo/highlight.php": "v9.12.0.2"
+  "name": "xwp/syntaxhighlighter-amplified",
+  "description": "Extension plugin for SyntaxHighlighter Evolved which uses highlight.php to add syntax highlighting in AMP responses.",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Weston Ruter",
+      "email": "weston@xwp.co"
     }
+  ],
+  "autoload":{
+    "classmap": [
+      "class-amp-sanitizer.php"
+    ]
+  },
+  "require": {
+    "scrivo/highlight.php": "^9.17"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^2.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  },
+  "scripts": {
+    "lint": [
+      "phpcs",
+      "composer validate --strict"
+    ],
+    "lint-fix": [
+      "phpcbf"
+    ]
+  }
 }

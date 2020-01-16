@@ -8,22 +8,30 @@
  * Plugin Name: SyntaxHighlighter Amplified
  * Description: Extension plugin for SyntaxHighlighter Evolved which uses highlight.php to add syntax highlighting in AMP responses.
  * Author: Weston Ruter, XWP
- * Author URI: https://xwp.co/
- * Version: 0.1
+ * Author URI: https://xwp.co
+ * Version: 0.2.0
  * License: GPLv2 or later
  */
 
 namespace SyntaxHighlighterAmplified;
 
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
 // Abort if composer dependencies have not been installed.
-if ( ! file_exists( __DIR__ . '/vendor/scrivo/highlight.php' ) ) {
-	add_action( 'admin_notices', function() {
-		?>
+if ( ! class_exists( '\Highlight\Highlighter' ) ) {
+	add_action(
+		'admin_notices',
+		function() {
+			?>
 		<div class="notice notice-warning">
-			<p><?php esc_html_e( 'Warning: Run `composer install` to finish activating SyntaxHighlighter Amplified.', 'syntaxhighlighter-amplified' ); ?></p>
+			<p><?php esc_html_e( 'The scrivo/highlight.php dependency is missing. Run composer install inside the syntaxhighlighter-amplified plugin directory or add the plugin as a Composer dependency to your site.', 'syntaxhighlighter-amplified' ); ?></p>
 		</div>
-		<?php
-	} );
+			<?php
+		}
+	);
+
 	return;
 }
 
@@ -60,7 +68,12 @@ function filter_syntaxhighlighter_cssclasses( $classes ) {
  * Enqueue styles.
  */
 function enqueue_styles() {
-	wp_enqueue_style( 'hjjs-default', plugin_dir_url( __FILE__ ) . 'vendor/scrivo/highlight.php/styles/default.css' );
+	wp_enqueue_style(
+		'hjjs-default',
+		plugin_dir_url( __FILE__ ) . 'vendor/scrivo/highlight.php/styles/default.css',
+		array(),
+		'0.2.0'
+	);
 }
 
 /**
@@ -70,7 +83,6 @@ function enqueue_styles() {
  * @return array Sanitizers.
  */
 function filter_amp_content_sanitizers( $sanitizers ) {
-	require_once __DIR__ . '/class-amp-sanitizer.php';
 	return array_merge(
 		array(
 			__NAMESPACE__ . '\AMP_Sanitizer' => array(),
