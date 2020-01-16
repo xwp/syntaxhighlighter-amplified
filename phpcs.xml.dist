@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress Coding Standards">
-	<rule ref="WordPress-Core" />
+	<rule ref="WordPress" />
 
 	<file>.</file>
 
 	<arg name="extensions" value="php" />
 	<arg name="colors" />
 	<arg value="s" /><!-- Show sniff codes in all reports -->
+
+	<rule ref="WordPress">
+		<!-- Third party deps use this format. -->
+        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
+    </rule>
 
 	<exclude-pattern>/vendor/</exclude-pattern>
 </ruleset>
