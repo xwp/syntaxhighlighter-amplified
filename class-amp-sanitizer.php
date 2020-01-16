@@ -15,29 +15,11 @@ namespace SyntaxHighlighterAmplified;
 class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 
 	/**
-	 * Whether the highlight.php library has been loaded.
-	 *
-	 * @var bool
-	 */
-	protected $library_loaded = false;
-
-	/**
 	 * Styles that have been added.
 	 *
 	 * @var array
 	 */
 	protected $printed_styles = array();
-
-	/**
-	 * Load highlight.php library.
-	 */
-	protected function load_library() {
-		if ( ! $this->library_loaded ) {
-			require_once __DIR__ . '/vendor/scrivo/highlight.php/Highlight/Autoloader.php';
-			spl_autoload_register( 'Highlight\Autoloader::load' );
-			$this->library_loaded = true;
-		}
-	}
 
 	/**
 	 * Sanitize CSS styles within the HTML contained in this instance's DOMDocument.
@@ -120,8 +102,8 @@ class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 	 */
 	public function highlight( $attrs, $code ) {
 		try {
-			$this->load_library();
 			$highlighter = new \Highlight\Highlighter();
+			
 			$language    = null;
 			if ( isset( $attrs['brush'] ) ) {
 				switch ( $attrs['brush'] ) {
