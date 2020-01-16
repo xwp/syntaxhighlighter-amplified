@@ -11,6 +11,6 @@
     }
   ],
   "require": {
-    "scrivo/highlight.php": "v9.12.0.2"
+    "scrivo/highlight.php": "^9.17"
   }
 }
