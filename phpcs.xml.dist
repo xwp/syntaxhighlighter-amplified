@@ -10,9 +10,9 @@
 
 	<rule ref="WordPress">
 		<!-- Third party deps use this format. -->
-        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
 		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
-    </rule>
+	</rule>
 
 	<exclude-pattern>/vendor/</exclude-pattern>
 </ruleset>
