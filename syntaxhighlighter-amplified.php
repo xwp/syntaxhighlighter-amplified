@@ -8,8 +8,8 @@
  * Plugin Name: SyntaxHighlighter Amplified
  * Description: Extension plugin for SyntaxHighlighter Evolved which uses highlight.php to add syntax highlighting in AMP responses.
  * Author: Weston Ruter, XWP
- * Author URI: https://xwp.co/
- * Version: 0.1
+ * Author URI: https://xwp.co
+ * Version: 0.2.0
  * License: GPLv2 or later
  */
 
