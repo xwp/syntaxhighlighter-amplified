@@ -21,13 +21,16 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
 // Abort if composer dependencies have not been installed.
 if ( ! class_exists( '\Highlight\Highlighter' ) ) {
-	add_action( 'admin_notices', function() {
-		?>
+	add_action(
+		'admin_notices',
+		function() {
+			?>
 		<div class="notice notice-warning">
 			<p><?php esc_html_e( 'The scrivo/highlight.php dependency is missing. Run composer install inside the syntaxhighlighter-amplified plugin directory or add the plugin as a Composer dependency to your site.', 'syntaxhighlighter-amplified' ); ?></p>
 		</div>
-		<?php
-	} );
+			<?php
+		}
+	);
 
 	return;
 }

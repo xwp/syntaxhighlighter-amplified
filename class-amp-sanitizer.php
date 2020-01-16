@@ -51,9 +51,9 @@ class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 			$attrs[ trim( $attr_pair[0] ) ] = trim( $attr_pair[1] );
 		}
 
-		$group  = 'syntaxhighlighter-amped-v1';
-		$code   = $pre->textContent;
-		$key    = md5( $code );
+		$group = 'syntaxhighlighter-amped-v1';
+		$code  = $pre->textContent;
+		$key   = md5( $code );
 		if ( wp_using_ext_object_cache() ) {
 			$result = wp_cache_get( $key, $group );
 		} else {
@@ -103,8 +103,8 @@ class AMP_Sanitizer extends \AMP_Base_Sanitizer {
 	public function highlight( $attrs, $code ) {
 		try {
 			$highlighter = new \Highlight\Highlighter();
-			
-			$language    = null;
+
+			$language = null;
 			if ( isset( $attrs['brush'] ) ) {
 				switch ( $attrs['brush'] ) {
 					case 'php':
