@@ -4,18 +4,10 @@ Adding [AMP plugin](https://github.com/Automattic/amp-wp) support to the [Syntax
 
 ## Installation
 
-To install via Git:
+Install as a Composer dependency:
 
-```bash
-mkdir -p wp-content/plugins/syntaxhighlighter-amplified
-cd wp-content/plugins/syntaxhighlighter-amplified
-curl -L https://github.com/xwp/syntaxhighlighter-amplified/archive/master.tar.gz | tar --strip-components=1 -xvz
-git add *
-composer install
-git add vendor/scrivo/highlight.php/Highlight/
-git add vendor/scrivo/highlight.php/styles/default.css
-git commit
-```
+	composer require xwp/syntaxhighlighter-amplified
+
 
 ## Credits
 
