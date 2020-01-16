@@ -3,7 +3,6 @@
   "description": "Extension plugin for SyntaxHighlighter Evolved which uses highlight.php to add syntax highlighting in AMP responses.",
   "type": "wordpress-plugin",
   "license": "MIT",
-  "version": "0.1",
   "authors": [
     {
       "name": "Weston Ruter",
