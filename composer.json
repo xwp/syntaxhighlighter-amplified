@@ -10,7 +10,7 @@
     }
   ],
   "autoload":{
-    "files": [
+    "classmap": [
       "class-amp-sanitizer.php"
     ]
   },
